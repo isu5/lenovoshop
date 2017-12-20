@@ -20,4 +20,8 @@ class IndexController extends CommonController
 
         return view('admin.index.index');
     }
+
+
+
+
 }

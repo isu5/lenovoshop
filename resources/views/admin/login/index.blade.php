@@ -34,34 +34,6 @@
     <!--Background Image [ DEMONSTRATION ]-->
     <script src="/admin/js/bg-images.js"></script>
 
-    
-    <!--=================================================
-
-    REQUIRED
-    You must include this in your project.
-
-
-    RECOMMENDED
-    This category must be included but you may modify which plugins or components which should be included in your project.
-
-
-    OPTIONAL
-    Optional plugins. You may choose whether to include it in your project or not.
-
-
-    DEMONSTRATION
-    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-
-    SAMPLE
-    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-    Detailed information and more samples can be found in the document.
-
-    =================================================-->
-        
-
 </head>
 
 <!--TIPS-->
@@ -150,14 +122,14 @@
 		<div class="demo-bg">
 		    <div id="demo-bg-list">
 		        <div class="demo-loading"><i class="psi-repeat-2"></i></div>
-		        <img class="demo-chg-bg bg-trans active" src="/admin/images/bg-img/thumbs/bg-trns.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-1.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-2.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-3.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-4.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-5.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-6.jpg" alt="Background Image">
-		        <img class="demo-chg-bg" src="/admin/images/bg-img/thumbs/bg-img-7.jpg" alt="Background Image">
+		        <img class="demo-chg-bg bg-trans active" src="/admin/img/bg-img/thumbs/bg-trns.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-1.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-2.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-3.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-4.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-5.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-6.jpg" alt="Background Image">
+		        <img class="demo-chg-bg" src="/admin/img/bg-img/thumbs/bg-img-7.jpg" alt="Background Image">
 		    </div>
 		</div>
 		<!--===================================================-->
