@@ -165,8 +165,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         //配置验证码
         Mews\Captcha\CaptchaServiceProvider::class,
-
-
+		
+		//配置RBAC权限
+		Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Package Service Providers...
          */

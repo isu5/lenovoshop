@@ -20,6 +20,7 @@ class CreateAdminsTable extends Migration
             $table->integer('login_count')->default(1)->comment('登录次数');
             $table->string('login_ip')->default('')->comment('登录ip');
             $table->tinyInteger('status')->default(1)->comment('管理员状态');
+			$table->rememberToken();
             $table->timestamps();
         });
     }
