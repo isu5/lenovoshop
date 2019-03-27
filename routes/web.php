@@ -26,3 +26,7 @@ Route::group(['namespace'=>'Home'],function(){
 
 //引入后台路由文件
 include __DIR__ .'/admin/web.php';
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

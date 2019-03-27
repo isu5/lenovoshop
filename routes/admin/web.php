@@ -22,6 +22,10 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function(){
     //后台首页
     Route::get('/index','IndexController@index');
 
+	Route::resource('/posts', 'PostController');
+	Route::resource('/users', 'UserHandleController');
+	Route::resource('/permissions', 'PermissionController');
+	Route::resource('/roles', 'RoleController');
 
 
 });
