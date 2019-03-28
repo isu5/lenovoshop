@@ -83,6 +83,9 @@ class PermissionController extends Controller
     public function edit($id)
     {
         //
+		$permission = Permission::findOrFail($id);
+
+         return view('permissions.edit', compact('permission'));
     }
 
     /**
@@ -92,10 +95,18 @@ class PermissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+	public function update(Request $request, $id) {
+		$permission = Permission::findOrFail($id);
+		$this->validate($request, [
+		 'name'=>'required|max:40',
+		]);
+		$input = $request->all();
+		$permission->fill($input)->save();
+		//个人喜欢控制器地址或者是路由地址，不喜欢用url，因为这个是写死的，很容易出问题，如果迁移的话
+		return redirect()->route('permissions.index')
+			->with('flash_message','Permission'. $permission->name.' updated!');
+
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -106,5 +117,47 @@ class PermissionController extends Controller
     public function destroy($id)
     {
         //
+    }
+	
+	public function givePermissionTo($permissions)
+    {
+        //集合对象
+       $permissions = collect($permissions)
+           //flatten() 方法将多维度的集合变成一维的：
+            ->flatten()
+        //map 方法遍历集合并传递每个值给给定回调。该回调可以修改数据项并返回，从而生成一个新的经过修改的集合
+            ->map(function ($permission) {
+                return $this->getStoredPermission($permission);
+            })
+            ->each(function ($permission) {
+                $this->ensureModelSharesGuard($permission);
+            })
+            ->all();
+
+        $this->permissions()->saveMany($permissions);
+
+        $this->forgetCachedPermissions();
+
+        return $this;
+    }
+	
+	protected function getStoredPermission($permissions)
+    {
+        if (is_numeric($permissions)) {
+            return app(Permission::class)->findById($permissions, $this->getDefaultGuardName());
+        }
+
+        if (is_string($permissions)) {
+            return app(Permission::class)->findByName($permissions, $this->getDefaultGuardName());
+        }
+
+        if (is_array($permissions)) {
+            return app(Permission::class)
+                ->whereIn('name', $permissions)
+                ->whereIn('guard_name', $this->getGuardNames())
+                ->get();
+        }
+
+        return $permissions;
     }
 }
